@@ -33,14 +33,9 @@ def load_or_parse_data():
             parsed_data = pickle.load(f)
     else:
         # Perform the parsing step and store the result in llama_parse_documents
-        parsingInstructionUber10k = """The provided document is a quarterly report filed by Uber Technologies, 
-        Inc. with the Securities and Exchange Commission (SEC). 
-        This form provides detailed financial information about the company's performance for a specific quarter. 
-        It includes unaudited financial statements, management discussion and analysis, and other relevant disclosures required by the SEC.
-        It contains many tables.
-        Try to be precise while answering the questions"""
-        parser = LlamaParse(api_key=llamaparse_api_key, result_type="markdown", parsing_instruction=parsingInstructionUber10k)
-        llama_parse_documents = parser.load_data("./data/uber_10q_march_2022.pdf")
+        parsingInstruction = """ """
+        parser = LlamaParse(api_key=llamaparse_api_key, result_type="markdown", parsing_instruction=parsingInstruction)
+        llama_parse_documents = parser.load_data("./data/gpt4all.pdf")
         
 
         # Save the parsed data to a file

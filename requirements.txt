@@ -6,5 +6,4 @@ qdrant_client
 python-dotenv
 langchain-groq
 chainlit
-fastembed
 unstructured[md]
